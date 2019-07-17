@@ -15,7 +15,7 @@ var makeIssue = function (type) {
 
 	var end_issue_date = new Date(first_issue_date.getTime() + 1000 * 60 * 10 * 77);
 
-	var cur_issue, end_time, state, todaySoldIssue;
+	var cur_issue, end_time, state, todaySoldIssue = 1;
 
 		// 正常销售
 	if (dateTime > first_issue_date.getTime() && dateTime < end_issue_date.getTime()) {
@@ -48,7 +48,6 @@ var makeIssue = function (type) {
 		// 第二天
 		if (today_end.getTime() - dateTime < 2 * 60 * 60 * 1000) {
 			first_issue_date.setDate(date.getDate() + 1);
-			todaySoldIssue = 1;
 		}
 
 		end_time = first_issue_date.getTime();
